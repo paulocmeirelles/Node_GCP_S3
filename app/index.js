@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const multer = require("multer");
 const uploadController = require("./controllers/upload.controller");
 const uploadImage = require("../helpers/upload.helper");
 const cors = require("cors");
@@ -18,7 +17,8 @@ var corsOptions = {
     }
   },
 };
-// app.use(cors(corsOptions));
+
+app.use(cors(corsOptions));
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
